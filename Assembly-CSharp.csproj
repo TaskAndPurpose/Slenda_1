@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{69C0561E-F3A4-91D1-FCB9-0BE3BDE967E6}</ProjectGuid>
+    <ProjectGuid>{1C7DF084-7D2E-79BF-3228-F1F47E81D96F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -61,6 +61,7 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.0b12\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\_Source\MainMenu.cs" />
     <Compile Include="Assets\_Source\StartScreen.cs" />
   </ItemGroup>
   <ItemGroup>
