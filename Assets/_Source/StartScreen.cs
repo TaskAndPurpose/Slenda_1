@@ -1,24 +1,48 @@
-// Import necessary Unity Engine libraries
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// Define the StartScreen class
 public class StartScreen : MonoBehaviour
 {
-    // Update is called once per frame
+    [SerializeField] private AudioClip mainBackgroundClip; // Assign your main background audio clip in the Unity Editor
+    private AudioSource audioSource;
+
+    void Start()
+    {
+        audioSource = gameObject.AddComponent<AudioSource>(); // Add AudioSource component dynamically
+
+        if (mainBackgroundClip != null)
+        {
+            // Start playing the main background clip
+            StartMainBackground();
+        }
+        else
+        {
+            Debug.LogError("Main background clip is not assigned!");
+        }
+    }
+
     void Update()
     {
         // Check if any key is pressed
         if (Input.anyKeyDown)
         {
-            // Call method to load the MainGame scene
-            LoadMainGame();
+            // Call method to load the MainMenu scene
+            LoadMainMenu();
         }
     }
-    // Method to load the MainGame scene
-    private void LoadMainGame()
+
+    // Method to start playing the main background clip
+    private void StartMainBackground()
     {
-        // Load the MainGame scene
+        audioSource.clip = mainBackgroundClip;
+        audioSource.loop = true;
+        audioSource.Play();
+    }
+
+    // Method to load the MainMenu scene
+    private void LoadMainMenu()
+    {
+        // Load the MainMenu scene
         SceneManager.LoadScene("MainMenu");
     }
 }
